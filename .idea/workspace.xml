@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/pack/App.java" line="17" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7f07d169-787f-4ea9-9555-4623ab3cff12" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/X_0/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/App.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/App.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pack/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pack/App.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +22,12 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pack/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="306">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1666#1667#0" expanded="true" />
-                <element signature="e#1691#1692#0" expanded="true" />
+                <element signature="e#3272#3273#0" expanded="true" />
+                <element signature="e#3297#3298#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,6 +55,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/GUI.form" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/pack/GUI.java" />
+        <option value="$PROJECT_DIR$/src/pack/App.form" />
         <option value="$PROJECT_DIR$/src/pack/App.java" />
       </list>
     </option>
@@ -71,11 +73,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="295" />
-    <option name="y" value="125" />
-    <option name="width" value="1290" />
-    <option name="height" value="705" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="766" />
+    <option name="y" value="86" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -88,6 +94,11 @@
             <path>
               <item name="X_0" type="b2602c69:ProjectViewProjectNode" />
               <item name="X_0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="X_0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="X_0" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="X_0" type="b2602c69:ProjectViewProjectNode" />
@@ -111,9 +122,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,14 +150,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pack.App" />
       <module name="X_0" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="pack.App" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,11 +210,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.GUI" />
-      <item itemvalue="Application.App" />
+      <item itemvalue="Application.GUI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="Application.GUI" />
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
@@ -219,81 +230,64 @@
       <option name="presentableId" value="Default" />
       <updated>1530810275212</updated>
       <workItem from="1530810277057" duration="2797000" />
+      <workItem from="1530898731655" duration="8242000" />
     </task>
+    <task id="LOCAL-00001" summary="123">
+      <created>1530834730830</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530834730830</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2797000" />
+    <option name="totallyTimeSpent" value="12112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="236" y="100" width="1032" height="564" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32837406" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32594234" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.43811396" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32518598" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.7296451" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.50104165" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.32943678" />
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.3995749" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Messages" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -303,18 +297,38 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pack/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#3272#3273#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/App.form">
-      <provider selected="true" editor-type-id="ui-designer" />
+    <entry file="file://$PROJECT_DIR$/src/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/pack/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3272#3273#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI.form" />
@@ -326,17 +340,20 @@
     <entry file="file://$PROJECT_DIR$/src/GUI.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/out/production/X_0/pack/App.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/App.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="306">
+          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#3272#3273#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
           </folding>
         </state>
       </provider>
