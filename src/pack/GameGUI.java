@@ -11,13 +11,15 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GameGUI {
     int nr=0;
+    int ln=0,col=0;
     private JFrame window = new JFrame();
     private JButton b[] = new JButton[9];
     private String[] letters = new String[9];
     private JPanel content_holder = new JPanel();
     private JPanel Info_Menu = new JPanel();
     private JPanel Check_Board = new JPanel();
-
+    private String matrix[][]=new String[5][5];
+    private String winner=new String();
     public  String get_Button_text(int x){
        return  b[x].getText();
     }
@@ -25,10 +27,41 @@ public class GameGUI {
     public void set_Button(int x, String s) {
         b[x].setText(s);
     }
-    public void button_response(String ch_P,String ch_C,int diff){
+    public String Validate(int r,int c,String name)
+    {
+        if(matrix[r][c]==matrix[r-1][c] && matrix[r][c]==matrix[r-2][c])
+            return name;
+        if(matrix[r][c]==matrix[r-1][c] && matrix[r][c]==matrix[r+1][c])
+            return name;
+        if(matrix[r][c]==matrix[r+1][c] && matrix[r][c]==matrix[r+2][c])
+            return name;
+        if(c>=2)
+            if(matrix[r][c]==matrix[r][c-1] && matrix[r][c]==matrix[r][c-2])
+                return name;
+        if(matrix[r][c]==matrix[r][c-1] && matrix[r][c]==matrix[r][c+1])
+            return name;
+        if(matrix[r][c]==matrix[r][c+1] && matrix[r][c]==matrix[r][c+2])
+            return name;
+        if(matrix[r][c]==matrix[r+1][c+1] && matrix[r][c]==matrix[r+2][c+2])
+            return name;
+        if(r>=2 && c>=2)
+            if(matrix[r][c]==matrix[r-1][c-1] && matrix[r][c]==matrix[r-2][c-2])
+                 return name;
+        if(matrix[r][c]==matrix[r-1][c-1] && matrix[r][c]==matrix[r+1][c+1])
+            return name;
+        if(c>=2)
+            if(matrix[r][c]==matrix[r+1][c-1] && matrix[r][c]==matrix[r+2][c-2])
+                 return name;
+        if(r>=2)
+            if(matrix[r][c]==matrix[r-1][c+1] && matrix[r][c]==matrix[r-2][c+2])
+                 return name;
+        if(matrix[r][c]==matrix[r+1][c-1] && matrix[r-1][c+1]==matrix[r][c])
+            return name;
+        return "NoOne";
+    }
+    public void button_response(String ch_P,String ch_C,int diff,String player_name){
+        winner="NoOne";
         for(int i=0;i<9;i++) {
-
-
             b[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -36,20 +69,69 @@ public class GameGUI {
                     for (int i = 0; i < 9; i++) {
                         if (b[i] == e.getSource()) {
                             set_Button(i, ch_P);
+                            b[i].setEnabled(false);
                             letters[i]=ch_P;
-                            pos = i;
+                            //pos = i;
+                            if(i<3) {
+                                matrix[1][i+1] = letters[i];
+                                ln = 1;
+                                col = i+1;
+                            }
+                            else
+                                if(i<6) {
+                                    matrix[2][i - 2] = letters[i];
+                                    ln = 2;
+                                    col = i-2;
+                                }
+                                else
+                                    if(i<9) {
+                                        matrix[3][i - 5] = letters[i];
+                                        ln = 3;
+                                        col = i - 5;
+                                    }
                         }
                     }
+                    //Validate
+                    winner=Validate(ln,col,player_name);
+                    if(winner==player_name)
+                    {
+                        JOptionPane.showMessageDialog(null,"Winner is "+winner);
+                    }
+                    int x;
+                    if(diff==0)
+                        x=(new C_Player_Easy()).choise(letters,ch_P,ch_C,nr);
+                    else
+                        x=(new C_Player_Easy()).choise(letters,ch_P,ch_C,nr);
                     /*int x = ThreadLocalRandom.current().nextInt(0, 9);
                     while ((b[x].getText() == ch_P || b[x].getText() == ch_C) && nr < 8) {
                         x = ThreadLocalRandom.current().nextInt(0, 9);
                     }*/
-                    if (nr < 8)
+                    if (nr < 8) {
                         b[x].setText(ch_C);
-                    nr += 2;
-
+                        letters[x] = ch_C;
+                        b[x].setEnabled(false);
+                        nr += 2;
+                        if (x < 3) {
+                            matrix[1][x + 1] = letters[x];
+                            ln = 1;
+                            col = x + 1;
+                        } else if (x < 6) {
+                            matrix[2][x - 2] = letters[x];
+                            ln = 2;
+                            col = x - 2;
+                        } else if (x < 9) {
+                            matrix[3][x - 5] = letters[x];
+                            ln = 3;
+                            col = x - 5;
+                        }
+                        //Validate
+                        winner = Validate(ln, col, "Computer");
+                        if (winner == "Computer") {
+                            JOptionPane.showMessageDialog(null, "Winner is Computer!");
+                        }
                     /*if ( (b[0].getText() == b[4].getText() && b[4].getText() == b[8].getText() ) && b[0].getText()!=" ")
                     JOptionPane.showMessageDialog(null, b[0].getText() + "WON");*/
+                    }
                 }
             });
         }

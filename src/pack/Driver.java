@@ -10,7 +10,7 @@ public class Driver {
     private  static void random(){
         diff= ThreadLocalRandom.current().nextInt(0,2);
     }
-    public  void first(){
+    public void first(){
         Object[] possibleValues = {"Human", "Computer"};
         Object selectedValue = JOptionPane.showInputDialog(null,
                 "Who goes first ?", "First Move",
@@ -35,9 +35,7 @@ public class Driver {
         String message =JOptionPane.showInputDialog("Please enter name:");
         GameGUI GUI =new GameGUI(message);
         main1.first();
-        GUI.button_response(ch_P,ch_C,diff);
+        GUI.button_response(ch_P,ch_C,diff,message);
     }
-
-
-    }
+}
 

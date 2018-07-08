@@ -12,13 +12,7 @@ public int choise(String b[] ,String ch_P, String ch_C,int nr){
     while ((b[x] == ch_P || b[x] == ch_C) && nr < 8) {
         x = ThreadLocalRandom.current().nextInt(0, 9);
     }
-
-return 1;
-}
-public  void tester(){
-
-
-
+    return x;
 }
 
 }
