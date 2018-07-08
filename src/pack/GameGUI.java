@@ -59,6 +59,11 @@ public class GameGUI {
             return name;
         return "NoOne";
     }
+    private void DisableAll()
+    {
+        for(int i=0;i<9;i++)
+            b[i].setEnabled(false);
+    }
     public void button_response(String ch_P,String ch_C,int diff,String player_name){
         winner="NoOne";
         for(int i=0;i<9;i++) {
@@ -96,6 +101,8 @@ public class GameGUI {
                     if(winner==player_name)
                     {
                         JOptionPane.showMessageDialog(null,"Winner is "+winner);
+                        DisableAll();
+                        return;
                     }
                     int x;
                     if(diff==0)
@@ -128,6 +135,8 @@ public class GameGUI {
                         winner = Validate(ln, col, "Computer");
                         if (winner == "Computer") {
                             JOptionPane.showMessageDialog(null, "Winner is Computer!");
+                            DisableAll();
+                            return;
                         }
                     /*if ( (b[0].getText() == b[4].getText() && b[4].getText() == b[8].getText() ) && b[0].getText()!=" ")
                     JOptionPane.showMessageDialog(null, b[0].getText() + "WON");*/
@@ -136,7 +145,14 @@ public class GameGUI {
             });
         }
     }
-
+    public void IGoFirst(String ch_P,String ch_C)
+    {
+        int x;
+        x=(new C_Player_Easy()).choise(null,ch_P,ch_C,0);
+        set_Button(x,ch_C);
+        b[x].setEnabled(false);
+        letters[x]=ch_C;
+    }
     public GameGUI(String player_name) {
         //CONTENT HOLDER BUILDER//
         content_holder.setLayout(new BoxLayout(content_holder, BoxLayout.Y_AXIS));
@@ -165,7 +181,7 @@ public class GameGUI {
 
         Check_Board.setBackground(Color.white);
         for (int i = 0; i < 9; i++) {
-            b[i] = new JButton(" ");
+            b[i] = new JButton();
             b[i].setBackground(Color.yellow);
             Check_Board.add(b[i]);
         }

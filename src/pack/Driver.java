@@ -35,6 +35,8 @@ public class Driver {
         String message =JOptionPane.showInputDialog("Please enter name:");
         GameGUI GUI =new GameGUI(message);
         main1.first();
+        if(ch_P=="0")
+            GUI.IGoFirst(ch_P,ch_C);
         GUI.button_response(ch_P,ch_C,diff,message);
     }
 }
