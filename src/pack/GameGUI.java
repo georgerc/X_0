@@ -10,18 +10,49 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameGUI {
-    int nr = 0;
-    private JPanel panel;
+    int nr=0;
     private JFrame window = new JFrame();
-    public JButton b[] = new JButton[9];
+    private JButton b[] = new JButton[9];
     private String[] letters = new String[9];
     private JPanel content_holder = new JPanel();
     private JPanel Info_Menu = new JPanel();
     private JPanel Check_Board = new JPanel();
-    private Computer_Player Ai;
+
+    public  String get_Button_text(int x){
+       return  b[x].getText();
+    }
 
     public void set_Button(int x, String s) {
         b[x].setText(s);
+    }
+    public void button_response(String ch_P,String ch_C,int diff){
+        for(int i=0;i<9;i++) {
+
+
+            b[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int pos;
+                    for (int i = 0; i < 9; i++) {
+                        if (b[i] == e.getSource()) {
+                            set_Button(i, ch_P);
+                            letters[i]=ch_P;
+                            pos = i;
+                        }
+                    }
+                    /*int x = ThreadLocalRandom.current().nextInt(0, 9);
+                    while ((b[x].getText() == ch_P || b[x].getText() == ch_C) && nr < 8) {
+                        x = ThreadLocalRandom.current().nextInt(0, 9);
+                    }*/
+                    if (nr < 8)
+                        b[x].setText(ch_C);
+                    nr += 2;
+
+                    /*if ( (b[0].getText() == b[4].getText() && b[4].getText() == b[8].getText() ) && b[0].getText()!=" ")
+                    JOptionPane.showMessageDialog(null, b[0].getText() + "WON");*/
+                }
+            });
+        }
     }
 
     public GameGUI(String player_name) {
@@ -66,7 +97,7 @@ public class GameGUI {
         //window.setLocationByPlatform(true);
         window.setVisible(true);
 
-        Object[] possibleValues = {"Human", "Computer"};
+        /*Object[] possibleValues = {"Human", "Computer"};
         Object selectedValue = JOptionPane.showInputDialog(null,
                 "Who goes first ?", "First Move",
                 JOptionPane.INFORMATION_MESSAGE, null,
@@ -83,7 +114,7 @@ public class GameGUI {
         else {
             ch_C = "X";
             ch_P = "0";
-        }
+        }*/
 
         // int game_dif=ThreadLocalRandom.current().nextInt(0,1);
         // Ai=new C_Player_Easy();
@@ -108,18 +139,18 @@ public class GameGUI {
         window.setVisible(true);
 */
 
-      System.out.printf(b[0].getText());
+    //  System.out.printf(b[0].getText());
 
-        for(int i=0;i<9;i++) {
+       /* for(int i=0;i<9;i++) {
 
 
-            b[i].addActionListener(new ActionListener() {
+                       b[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     int pos;
                     for (int i = 0; i < 9; i++) {
                         if (b[i] == e.getSource()) {
-                           set_Button(i,ch_P);
+                            set_Button(i,ch_P);
                             pos = i;
                         }
                     }
@@ -130,16 +161,16 @@ public class GameGUI {
                     if (nr < 8)
                         b[x].setText(ch_C);
                     nr += 2;
-                    if ( (b[0].getText() == b[4].getText() && b[4].getText() == b[8].getText() ) && b[0].getText()!=" ")
-                        JOptionPane.showMessageDialog(null, b[0].getText() + "WON");
+
+                    *//*if ( (b[0].getText() == b[4].getText() && b[4].getText() == b[8].getText() ) && b[0].getText()!=" ")
+                        JOptionPane.showMessageDialog(null, b[0].getText() + "WON");*//*
                 }
-
-
-            });
+            });*/
 
 
 
         }
+
 
 
 
@@ -152,7 +183,7 @@ public class GameGUI {
 
 
             }
-    }
+
 
 
 
