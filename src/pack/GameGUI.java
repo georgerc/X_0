@@ -1,13 +1,7 @@
 package pack;
 
-import com.sun.javaws.exceptions.ExitException;
-import com.sun.xml.internal.bind.v2.TODO;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class GameGUI {
    private static int  score_player=0;
@@ -18,17 +12,26 @@ public class GameGUI {
     private JPanel content_holder = new JPanel();
     private JPanel Info_Menu = new JPanel();
     private JPanel Check_Board = new JPanel();
+   static JLabel Player_Points = new JLabel();
+   static JLabel Computer_Points = new JLabel();
+   static JLabel Draws = new JLabel();
     public  JButton[] get_buttons(){
         return b;
     }
-    static public void add_score(String c){
-        if(c=="C")
+    static public void add_score(String c,String player_name){
+        if(c=="C") {
             score_ai++;
-        if(c=="P")
-            score_player++;
-        else
-            draws++;
+            Computer_Points.setText("Computer Points:" + score_ai);
+        }
+        if(c=="P") {
 
+            score_player++;
+            Player_Points.setText(player_name + ":" + " " + score_player);
+        }
+        if(c=="D") {
+            draws++;
+            Draws.setText("Draws:" + draws);
+        }
     }
 
 
@@ -42,11 +45,11 @@ public class GameGUI {
         //INFO MENU BUILDER\
         int tester = 1;
         Info_Menu.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        JLabel Player_Points = new JLabel();
+        //JLabel Player_Points = new JLabel();
         Player_Points.setText(player_name + ":" + " " + score_player);
-        JLabel Computer_Points = new JLabel();
+       // JLabel Computer_Points = new JLabel();
         Computer_Points.setText("Computer Points:" + score_ai);
-        JLabel Draws = new JLabel();
+       // JLabel Draws = new JLabel();
         Draws.setText("Draws:" + draws);
         JButton New_G_Button = new JButton();
         New_G_Button.setText("New Game");
