@@ -149,9 +149,11 @@ public class Driver {
     static private void IGoFirst(String ch_P, String ch_C) {
         int x;
         x = (new C_Player_Easy()).choise(null, ch_P, ch_C, 0);
+        nr++;
         b[x].setText(ch_C);
         b[x].setEnabled(false);
         letters[x] = ch_C;
+        condition(x);
     }
 
     static public void reset_UI() {
@@ -172,10 +174,10 @@ public class Driver {
             Driver.IGoFirst(ch_P, ch_C);
         Driver.button_response(ch_P, ch_C, diff, message);
 
-        if(ok==1) {
+        /*if(ok==1) {
             Driver.reset_UI();
             ok=0;
-        }
+        }*/
         }
 }
 
