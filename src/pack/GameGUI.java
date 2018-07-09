@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameGUI {
+   private static int  score_player=0;
+   private static int  score_ai=0;
+   private static int  draws=0;
     private JFrame window = new JFrame();
     private JButton b[] = new JButton[9];
     private JPanel content_holder = new JPanel();
@@ -18,6 +21,17 @@ public class GameGUI {
     public  JButton[] get_buttons(){
         return b;
     }
+    static public void add_score(String c){
+        if(c=="C")
+            score_ai++;
+        if(c=="P")
+            score_player++;
+        else
+            draws++;
+
+    }
+
+
     public GameGUI(String player_name) {
         //CONTENT HOLDER BUILDER//
         content_holder.setLayout(new BoxLayout(content_holder, BoxLayout.Y_AXIS));
@@ -29,11 +43,11 @@ public class GameGUI {
         int tester = 1;
         Info_Menu.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JLabel Player_Points = new JLabel();
-        Player_Points.setText(player_name + ":" + " " + "P");
+        Player_Points.setText(player_name + ":" + " " + score_player);
         JLabel Computer_Points = new JLabel();
-        Computer_Points.setText("Computer Points:" + "P");
+        Computer_Points.setText("Computer Points:" + score_ai);
         JLabel Draws = new JLabel();
-        Draws.setText("Draws:" + "P");
+        Draws.setText("Draws:" + draws);
         JButton New_G_Button = new JButton();
         New_G_Button.setText("New Game");
         Info_Menu.setBackground(Color.pink);

@@ -1,6 +1,7 @@
 package pack;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +15,7 @@ public class Driver {
     static private String winner;
     static private String matrix[][] = new String[5][5];
     static private String[] letters = new String[9];
-
+    static int ok=0;
 
     static private void first() {
         Object[] possibleValues = {"Human", "Computer"};
@@ -102,7 +103,6 @@ public class Driver {
                             b[i].setText(ch_P);
                             b[i].setEnabled(false);
                             letters[i] = ch_P;
-                            //pos = i;
                             Driver.condition(i);
                         }
 
@@ -111,18 +111,20 @@ public class Driver {
                     winner = Validate(ln, col, player_name);
                     if (winner == player_name) {
                         JOptionPane.showMessageDialog(null, "Winner is " + winner);
+                        GameGUI.add_score("P");
                         DisableAll();
+                        ok=1;
                         return;
+                    }
+                    if (nr == 9 && winner == "NoOne") {
+                        DisableAll();
+
                     }
                     int x;
                     if (diff == 0)
                         x = (new C_Player_Easy()).choise(letters, ch_P, ch_C, nr);
                     else
                         x = (new C_Player_Easy()).choise(letters, ch_P, ch_C, nr);
-                    /*int x = ThreadLocalRandom.current().nextInt(0, 9);
-                    while ((b[x].getText() == ch_P || b[x].getText() == ch_C) && nr < 8) {
-                        x = ThreadLocalRandom.current().nextInt(0, 9);
-                    }*/
                     if (nr < 8) {
                         b[x].setText(ch_C);
                         letters[x] = ch_C;
@@ -133,7 +135,9 @@ public class Driver {
                         winner = Validate(ln, col, "Computer");
                         if (winner == "Computer") {
                             JOptionPane.showMessageDialog(null, "Winner is Computer!");
+                            GameGUI.add_score("C");
                             DisableAll();
+                            ok=1;
                             return;
                         }
                     }
@@ -150,8 +154,16 @@ public class Driver {
         letters[x] = ch_C;
     }
 
+    static public void reset_UI() {
+        for (int i = 0; i < 9; i++) {
+            b[i].setText("");
+            b[i].setEnabled(true);
+            b[i].setBackground(Color.BLUE);
+        }
+    }
+
     public static void main(String[] args) {
-        // Driver  main1=new Driver();
+        //  Driver d=new Driver();
         String message = JOptionPane.showInputDialog("Please enter name:");
         GameGUI GUI = new GameGUI(message);
         Driver.first();
@@ -160,7 +172,10 @@ public class Driver {
             Driver.IGoFirst(ch_P, ch_C);
         Driver.button_response(ch_P, ch_C, diff, message);
 
-
-    }
+        if(ok==1) {
+            Driver.reset_UI();
+            ok=0;
+        }
+        }
 }
 
