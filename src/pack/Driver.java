@@ -40,34 +40,69 @@ public class Driver {
     }
 
     static private String Validate(int r, int c, String name) {
-        if (matrix[r][c] == matrix[r - 1][c] && matrix[r][c] == matrix[r - 2][c])
+        if (matrix[r][c] == matrix[r - 1][c] && matrix[r][c] == matrix[r - 2][c]) {
+            GameGUI.color_buttons(r,r-1,r-2,c,c,c,b);
             return name;
+
+        }
         if (matrix[r][c] == matrix[r - 1][c] && matrix[r][c] == matrix[r + 1][c])
+        {
+            GameGUI.color_buttons(r,r-1,r+1,c,c,c,b);
             return name;
-        if (matrix[r][c] == matrix[r + 1][c] && matrix[r][c] == matrix[r + 2][c])
-            return name;
-        if (c >= 2)
-            if (matrix[r][c] == matrix[r][c - 1] && matrix[r][c] == matrix[r][c - 2])
+        }
+            if (matrix[r][c] == matrix[r + 1][c] && matrix[r][c] == matrix[r + 2][c]) {
+                GameGUI.color_buttons(r,r+1,r+2,c,c,c,b);
                 return name;
-        if (matrix[r][c] == matrix[r][c - 1] && matrix[r][c] == matrix[r][c + 1])
+
+            }
+        if (c >= 2)
+            if (matrix[r][c] == matrix[r][c - 1] && matrix[r][c] == matrix[r][c - 2]) {
+                GameGUI.color_buttons(r,r,r,c,c-1,c-2,b);
+                return name;
+
+            }
+        if (matrix[r][c] == matrix[r][c - 1] && matrix[r][c] == matrix[r][c + 1]) {
+            GameGUI.color_buttons(r,r,r,c,c-1,c+1,b);
             return name;
-        if (matrix[r][c] == matrix[r][c + 1] && matrix[r][c] == matrix[r][c + 2])
+        }
+        if (matrix[r][c] == matrix[r][c + 1] && matrix[r][c] == matrix[r][c + 2]) {
+            GameGUI.color_buttons(r,r,r,c,c+1,c+2,b);
             return name;
-        if (matrix[r][c] == matrix[r + 1][c + 1] && matrix[r][c] == matrix[r + 2][c + 2])
+
+        }
+        if (matrix[r][c] == matrix[r + 1][c + 1] && matrix[r][c] == matrix[r + 2][c + 2]) {
+            GameGUI.color_buttons(r,r+1,r+2,c,c+1,c+2,b);
             return name;
+
+        }
         if (r >= 2 && c >= 2)
-            if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r - 2][c - 2])
+            if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r - 2][c - 2]) {
+                GameGUI.color_buttons(r,r-1,r-2,c,c-1,c,b);
                 return name;
-        if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r + 1][c + 1])
+
+            }
+        if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r + 1][c + 1]) {
+            GameGUI.color_buttons(r,r-1,r+1,c,c-1,c,b);
             return name;
+
+        }
         if (c >= 2)
-            if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r][c] == matrix[r + 2][c - 2])
+            if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r][c] == matrix[r + 2][c - 2]) {
+                GameGUI.color_buttons(r,r+1,r+2,c,c-1,c,b);
                 return name;
+            }
         if (r >= 2)
-            if (matrix[r][c] == matrix[r - 1][c + 1] && matrix[r][c] == matrix[r - 2][c + 2])
+
+            if (matrix[r][c] == matrix[r - 1][c + 1] && matrix[r][c] == matrix[r - 2][c + 2]) {
+                GameGUI.color_buttons(r,r-1,r-2,c,c,c,b);
                 return name;
-        if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r - 1][c + 1] == matrix[r][c])
+        }
+        if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r - 1][c + 1] == matrix[r][c]) {
+            GameGUI.color_buttons(r,r+1,r-1,c,c-1,c+1,b);
             return name;
+
+
+        }
 
         return "NoOne";
     }
@@ -158,10 +193,6 @@ public class Driver {
                         return;
 
                     }
-
-
-                    //nr+=2;
-                    System.out.printf(winner+nr+" ");
                 }
             });
         }
@@ -181,6 +212,7 @@ public class Driver {
         for (int i = 0; i < 9; i++) {
             b[i].setText("");
             b[i].setEnabled(true);
+            b[i].setBackground(Color.YELLOW);
             letters[i]="";
 
         }

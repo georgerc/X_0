@@ -15,6 +15,32 @@ public class GameGUI {
    static JLabel Player_Points = new JLabel();
    static JLabel Computer_Points = new JLabel();
    static JLabel Draws = new JLabel();
+
+   static public void color_buttons(int row,int row1,int row2, int col,int col1,int col2,JButton b[]){
+
+       if(row==1)
+           b[row+col-2].setBackground(Color.GREEN);
+       if(row==2)
+           b[row+col].setBackground(Color.GREEN);
+       if(row==3)
+           b[row+col+2].setBackground(Color.GREEN);
+
+       if(row1==1)
+           b[row1+col1-2].setBackground(Color.GREEN);
+       if(row1==2)
+           b[row1+col1].setBackground(Color.GREEN);
+       if(row1==3)
+           b[row1+col1+2].setBackground(Color.GREEN);
+
+       if(row2==1)
+           b[row2+col2-2].setBackground(Color.GREEN);
+       if(row2==2)
+           b[row2+col2].setBackground(Color.GREEN);
+       if(row2==3)
+           b[row2+col2+2].setBackground(Color.GREEN);
+
+
+   }
     public  JButton[] get_buttons(){
         return b;
     }
