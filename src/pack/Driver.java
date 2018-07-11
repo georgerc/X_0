@@ -50,11 +50,11 @@ public class Driver {
             GameGUI.color_buttons(r,r-1,r+1,c,c,c,b);
             return name;
         }
-            if (matrix[r][c] == matrix[r + 1][c] && matrix[r][c] == matrix[r + 2][c]) {
-                GameGUI.color_buttons(r,r+1,r+2,c,c,c,b);
-                return name;
+        if (matrix[r][c] == matrix[r + 1][c] && matrix[r][c] == matrix[r + 2][c]) {
+            GameGUI.color_buttons(r,r+1,r+2,c,c,c,b);
+            return name;
 
-            }
+        }
         if (c >= 2)
             if (matrix[r][c] == matrix[r][c - 1] && matrix[r][c] == matrix[r][c - 2]) {
                 GameGUI.color_buttons(r,r,r,c,c-1,c-2,b);
@@ -77,33 +77,29 @@ public class Driver {
         }
         if (r >= 2 && c >= 2)
             if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r - 2][c - 2]) {
-                GameGUI.color_buttons(r,r-1,r-2,c,c-1,c,b);
+                GameGUI.color_buttons(r,r-1,r-2,c,c-1,c-2,b);
                 return name;
 
             }
         if (matrix[r][c] == matrix[r - 1][c - 1] && matrix[r][c] == matrix[r + 1][c + 1]) {
-            GameGUI.color_buttons(r,r-1,r+1,c,c-1,c,b);
+            GameGUI.color_buttons(r,r-1,r+1,c,c-1,c+1,b);
             return name;
 
         }
         if (c >= 2)
             if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r][c] == matrix[r + 2][c - 2]) {
-                GameGUI.color_buttons(r,r+1,r+2,c,c-1,c,b);
+                GameGUI.color_buttons(r,r+1,r+2,c,c-1,c-2,b);
                 return name;
             }
         if (r >= 2)
-
             if (matrix[r][c] == matrix[r - 1][c + 1] && matrix[r][c] == matrix[r - 2][c + 2]) {
-                GameGUI.color_buttons(r,r-1,r-2,c,c,c,b);
+                GameGUI.color_buttons(r,r-1,r-2,c,c+1,c+2,b);
                 return name;
-        }
+            }
         if (matrix[r][c] == matrix[r + 1][c - 1] && matrix[r - 1][c + 1] == matrix[r][c]) {
-            GameGUI.color_buttons(r,r+1,r-1,c,c-1,c+1,b);
+            GameGUI.color_buttons(r, r + 1, r - 1, c, c - 1, c + 1, b);
             return name;
-
-
         }
-
         return "NoOne";
     }
 
@@ -159,10 +155,12 @@ public class Driver {
                         return;
                     }
                     int x;
-                    if (diff == 0)
+                    if (diff == 0) {
                         x = (new C_Player_Easy()).choise(letters, ch_P, ch_C, nr);
-                    else
-                        x = (new C_Player_Easy()).choise(letters, ch_P, ch_C, nr);
+                    }
+                    else {
+                        x = (new C_Player_Hard()).choise(matrix, letters, ch_P, ch_C, nr);
+                    }
                     if (nr < 9) {
                         b[x].setText(ch_C);
                         letters[x] = ch_C;
@@ -245,6 +243,15 @@ public class Driver {
         GameGUI GUI = new GameGUI(message);
         Driver.first();
         b = GUI.get_buttons();
+        diff=ThreadLocalRandom.current().nextInt(0, 2);
+        if(diff==0)
+        {
+            JOptionPane.showMessageDialog(null,"Play against naive computer player!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Play against strategic computer player!");
+        }
         Driver.button_response(ch_P, ch_C, diff, message);
             if (ch_P == "0")
                 Driver.IGoFirst(ch_P, ch_C);
