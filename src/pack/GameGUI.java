@@ -2,6 +2,8 @@ package pack;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameGUI {
    private static int  score_player=0;
@@ -15,31 +17,20 @@ public class GameGUI {
    static JLabel Player_Points = new JLabel();
    static JLabel Computer_Points = new JLabel();
    static JLabel Draws = new JLabel();
-
-   static public void color_buttons(int row,int row1,int row2, int col,int col1,int col2,JButton b[]){
-
+   static public void Color_now(int row,int col,JButton b[])
+   {
        if(row==1)
            b[row+col-2].setBackground(Color.GREEN);
        if(row==2)
            b[row+col].setBackground(Color.GREEN);
        if(row==3)
            b[row+col+2].setBackground(Color.GREEN);
+   }
+   static public void color_buttons(int row,int row1,int row2, int col,int col1,int col2,JButton b[]){
 
-       if(row1==1)
-           b[row1+col1-2].setBackground(Color.GREEN);
-       if(row1==2)
-           b[row1+col1].setBackground(Color.GREEN);
-       if(row1==3)
-           b[row1+col1+2].setBackground(Color.GREEN);
-
-       if(row2==1)
-           b[row2+col2-2].setBackground(Color.GREEN);
-       if(row2==2)
-           b[row2+col2].setBackground(Color.GREEN);
-       if(row2==3)
-           b[row2+col2+2].setBackground(Color.GREEN);
-
-
+       Color_now(row,col,b);
+       Color_now(row1,col1,b);
+       Color_now(row2,col2,b);
    }
     public  JButton[] get_buttons(){
         return b;
@@ -59,8 +50,12 @@ public class GameGUI {
             Draws.setText("Draws:" + draws);
         }
     }
-
-
+    private void Reset_Scoreboard()
+    {
+        score_ai=0;
+        score_player=0;
+        draws=0;
+    }
     public GameGUI(String player_name) {
         //CONTENT HOLDER BUILDER//
         content_holder.setLayout(new BoxLayout(content_holder, BoxLayout.Y_AXIS));
@@ -79,6 +74,14 @@ public class GameGUI {
         Draws.setText("Draws:" + draws);
         JButton New_G_Button = new JButton();
         New_G_Button.setText("New Game");
+        New_G_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                window.dispose();
+                Reset_Scoreboard();
+                Driver.main(null);
+            }
+        });
         Info_Menu.setBackground(Color.pink);
         Info_Menu.add(Player_Points);
         Info_Menu.add(Computer_Points);
