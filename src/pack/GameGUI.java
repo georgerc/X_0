@@ -79,6 +79,7 @@ public class GameGUI {
             public void actionPerformed(ActionEvent e) {
                 window.dispose();
                 Reset_Scoreboard();
+                Driver.reset_UI();
                 Driver.main(null);
             }
         });
