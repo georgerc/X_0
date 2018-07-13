@@ -28,12 +28,14 @@ public class Driver {
         if (selectedValue == "Human") {
             ch_C = "0";
             ch_P = "X";
-        } else {
+        } else if (selectedValue=="Computer"){
             ch_C = "X";
             ch_P = "0";
         }
-
-
+        else
+        {
+            ch_C=ch_P=null;
+        }
     }
 
     static private String Validate(int r, int c, String name) {
@@ -124,6 +126,7 @@ public class Driver {
 
         winner = "NoOne";
         for (int i = 0; i < 9; i++) {
+            b[i].setFont(new Font("Serif",Font.BOLD,20));
             b[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -218,9 +221,17 @@ public class Driver {
     }
 
     public static void main(String[] args) {
-        String message = JOptionPane.showInputDialog("Please enter name:");
+        String message = null;
+        message = JOptionPane.showInputDialog("Please enter name:");
+        if(message==null)
+             return;
         GameGUI GUI = new GameGUI(message);
         Driver.first();
+        if(ch_C==null)
+        {
+            GUI.GetWindow().dispose();
+            return;
+        }
         b = GUI.get_buttons();
         diff=ThreadLocalRandom.current().nextInt(0, 2);
         if(diff==0)

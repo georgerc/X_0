@@ -87,7 +87,10 @@ public class GameGUI {
         score_player=0;
         draws=0;
     }
-
+    public JFrame GetWindow()
+    {
+        return window;
+    }
     /**
      *Constructs the User Interface of the Tic Tac Toe. Consists in three JPanels, "content_holder","Info_Menu","Check_Board".The content_holder panel hold the other two panels to allign them properly. The Check_Board panel hold the Tic Tac Toe board, a 3 by 3
      * button grid. The Info_menu hold all the points for the computer and the player as well a the New Game Button.
@@ -97,6 +100,7 @@ public class GameGUI {
          JPanel content_holder = new JPanel();
          JPanel Info_Menu = new JPanel();
          JPanel Check_Board = new JPanel();
+         JButton jbt=new JButton();
         //CONTENT HOLDER BUILDER//
         content_holder.setLayout(new BoxLayout(content_holder, BoxLayout.Y_AXIS));
         content_holder.setBorder(
@@ -121,11 +125,13 @@ public class GameGUI {
                 Driver.main(null);
             }
         });
+        jbt.setText("Scoreboard");
         Info_Menu.setBackground(Color.pink);
         Info_Menu.add(Player_Points);
         Info_Menu.add(Computer_Points);
         Info_Menu.add(Draws);
         Info_Menu.add(New_G_Button);
+        Info_Menu.add(jbt);
         //CHECK_BOARD BUILD
 
         Check_Board.setLayout(new GridLayout(3, 3, 2, 2));
@@ -133,6 +139,7 @@ public class GameGUI {
         for (int i = 0; i < 9; i++) {
             b[i] = new JButton();
             b[i].setBackground(Color.yellow);
+            b[i].setForeground(Color.BLUE);
             Check_Board.add(b[i]);
         }
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
