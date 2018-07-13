@@ -1,7 +1,5 @@
 package pack;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Driver {
-    static int ok = 0;
     static private int diff = 0;
     static private int nr = 0;
     static private int ln = 0, col = 0;
@@ -122,11 +119,9 @@ public class Driver {
             ln = 3;
             col = i - 5;
         }
-
-
     }
+         static private void button_response(String ch_P, String ch_C, int diff, String player_name) {
 
-    static private void button_response(String ch_P, String ch_C, int diff, String player_name) {
         winner = "NoOne";
         for (int i = 0; i < 9; i++) {
             b[i].addActionListener(new ActionListener() {
@@ -205,7 +200,6 @@ public class Driver {
         letters[x] = ch_C;
         condition(x);
     }
-
     static public void reset_UI() {
         for (int i = 0; i < 9; i++) {
             b[i].setText("");
@@ -223,23 +217,8 @@ public class Driver {
 
     }
 
-    private static boolean check_buttons(){
-        for(int i=0;i<9;i++)
-            if(b[i].isEnabled()) {
-                return true;
-
-            }
-        return  false;
-    }
     public static void main(String[] args) {
-        //  Driver d=new Driver();
         String message = JOptionPane.showInputDialog("Please enter name:");
-      /*  GameGUI GUI = new GameGUI(message);
-        Driver.first();
-        b = GUI.get_buttons();
-        if (ch_P == "0")
-            Driver.IGoFirst(ch_P, ch_C);
-            Driver.button_response(ch_P, ch_C, diff, message);*/
         GameGUI GUI = new GameGUI(message);
         Driver.first();
         b = GUI.get_buttons();
@@ -255,13 +234,6 @@ public class Driver {
         Driver.button_response(ch_P, ch_C, diff, message);
             if (ch_P == "0")
                 Driver.IGoFirst(ch_P, ch_C);
-        //        Driver.reset_UI();
-        //b[0].setBackground(Color.BLUE);
-
 }
-        /*if(ok==1) {
-            Driver.reset_UI();
-            ok=0;
-        }*/
     }
 
