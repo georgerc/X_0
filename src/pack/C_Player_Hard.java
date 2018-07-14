@@ -72,23 +72,12 @@ public class C_Player_Hard extends  Computer_Player {
     public int choise(String matrix[][],String b[] ,String ch_P, String ch_C,int nr)
     {
         int x=0;
-        if(ch_C=="0") {
-            x=GetPos(matrix,ch_P,ch_C,ch_P);
-            if(x!=10)
-                return x;
-            x=GetPos(matrix,ch_P,ch_C,ch_C);
-            if(x!=10)
-                return x;
-        }
-        else
-        {
-            x=GetPos(matrix,ch_P,ch_C,ch_C);
-            if(x!=10)
-                return x;
-            x=GetPos(matrix,ch_P,ch_C,ch_P);
-            if(x!=10)
-                return x;
-        }
+        x=GetPos(matrix,ch_P,ch_C,ch_C);
+        if(x!=10)
+            return x;
+        x=GetPos(matrix,ch_P,ch_C,ch_P);
+        if(x!=10)
+            return x;
         x=ThreadLocalRandom.current().nextInt(0,9);
         if(b!=null) {
             while ((b[x] == ch_P || b[x] == ch_C) && nr < 9) {
