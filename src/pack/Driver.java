@@ -5,7 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.ThreadLocalRandom;
+/**
+*The main class that drives the Tic Tac Toe Game.
 
+ */
 public class Driver {
     static private int diff = 0;
     static private int nr = 0;
@@ -17,6 +20,9 @@ public class Driver {
     static private String matrix[][] = new String[5][5];
     static private String[] letters = new String[9];
 
+    /**
+     * Gives the player a JOption pane to choose wich player goes first,Human or Computer.
+     * */
     static private void first() {
         Object[] possibleValues = {"Human", "Computer"};
         Object selectedValue = JOptionPane.showInputDialog(null,
@@ -38,6 +44,13 @@ public class Driver {
         }
     }
 
+    /**
+     *Validates if there is a win on row's colloms and diagonals.
+     * @param r The row
+     * @param c The collom
+     * @param name The name of the player.
+     * @return
+     */
     static private String Validate(int r, int c, String name) {
         if (matrix[r][c] == matrix[r - 1][c] && matrix[r][c] == matrix[r - 2][c]) {
             GameGUI.color_buttons(r,r-1,r-2,c,c,c,b);
@@ -102,6 +115,9 @@ public class Driver {
         return "NoOne";
     }
 
+    /**
+     * Disables all buttons after a game session has ended.
+     */
     static private void DisableAll() {
         for (int i = 0; i < 9; i++)
             b[i].setEnabled(false);
@@ -122,6 +138,14 @@ public class Driver {
             col = i - 5;
         }
     }
+
+    /**
+     * Creates the Action Handler for each button, chooses based on variable "diff" what type of strategy to use, and checks if there is a winner or a draw.
+     * @param ch_P The player character (Either 0 or X)
+     * @param ch_C The computer player character (Either 0 or X)
+     * @param diff The game difficulty (0 for a "naive" computer or 1 for a "strategic" computer)
+     * @param player_name The name of the player.
+     */
          static private void button_response(String ch_P, String ch_C, int diff, String player_name) {
 
         winner = "NoOne";
@@ -194,6 +218,11 @@ public class Driver {
         }
     }
 
+    /**
+     * Make the first move if the Computer Player goes first.
+     * @param ch_P ch_P The player character (Either 0 or X)
+     * @param ch_C The computer player character (Either 0 or X)
+     */
     static private void IGoFirst(String ch_P, String ch_C) {
         int x;
         x = (new C_Player_Easy()).choise(null, ch_P, ch_C, 0);
@@ -203,6 +232,10 @@ public class Driver {
         letters[x] = ch_C;
         condition(x);
     }
+
+    /**
+     * Rest all the variables for a new game.
+     */
     static public void reset_UI() {
         for (int i = 0; i < 9; i++) {
             b[i].setText("");
@@ -220,6 +253,10 @@ public class Driver {
 
     }
 
+    /**
+     * Main funtion.
+     * @param args
+     */
     public static void main(String[] args) {
         String message = null;
         message = JOptionPane.showInputDialog("Please enter name:");
