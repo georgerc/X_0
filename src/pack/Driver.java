@@ -150,7 +150,7 @@ public class Driver {
 
         winner = "NoOne";
         for (int i = 0; i < 9; i++) {
-            b[i].setFont(new Font("Serif",Font.BOLD,20));
+            b[i].setFont(new Font("Serif",Font.BOLD,35));
             b[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -259,9 +259,17 @@ public class Driver {
      */
     public static void main(String[] args) {
         String message = null;
-        message = JOptionPane.showInputDialog("Please enter name:");
-        if(message==null)
-             return;
+        int cnt=0;
+        while(Test.NameLimitsTest(message)==0) {
+            if(cnt>=1)
+            {
+                JOptionPane.showMessageDialog(null,"Name must have between 2 and 16 characters!");
+            }
+            message = JOptionPane.showInputDialog("Please enter name:");
+            if(message==null)
+                return;
+            cnt++;
+        }
         GameGUI GUI = new GameGUI(message);
         Driver.first();
         if(ch_C==null)
